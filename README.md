@@ -22,3 +22,10 @@
 ```cd go/src/proto-playground/client```
 
 ```go run main.go <first_name>```
+
+
+I watched two videos on gRPC, both of them used .WithInsecure(), and one of them used the relfection package which I guess is not required for a hello-world example but is good practice.
+
+As you per the diagram you wrote, the client sends a BookTrip message which stores the passenger name, and the server sends a Trip message which stores passanger name and driver name.
+
+
