@@ -1,7 +1,7 @@
 package main
 
 import (
-	"grpcTestOne/proto"
+	"grpctest1/proto"
 	"log"
 
 	"golang.org/x/net/context"

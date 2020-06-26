@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	"grpcTestOne/proto"
+	"grpctest1/proto"
 	"log"
 	"net"
 
