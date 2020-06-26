@@ -9,11 +9,8 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
-
-type server struct{}
-
 func main() {
-	lis, err := net.Listen("tcp", ":3001") //React + 1
+	lis, err := net.Listen("tcp", ":3001") //React port + 1
 	if err != nil {
 		log.Fatalf("Error %v", err)
 	}
@@ -28,7 +25,13 @@ func main() {
 
 }
 
+type server struct{}
+
 func (s *server) MakeReservation(ctx context.Context, req *proto.BookTrip) (*proto.Trip, error) {
-	log.Printf("Recieved message from client %s", req.PassengerName)
-	return &proto.Trip{PassengerName: "Default pass", DriverName: "April"}, nil
+	log.Printf("Recieved request to book trip from client %s", req.PassengerName)
+	new_trip := proto.Trip {
+		PassengerName: req.PassengerName
+		DriverName: "Marek"
+	}
+	return &new_trip, nil
 }
